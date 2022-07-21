@@ -1,14 +1,23 @@
-vector<string> binaryTreePaths(TreeNode *root){
-  vector<string> ans;
-  if(!root)return false;
-  helper(root,ans,to_string(root->val));
-}
-
-void helper(TreeNode *root,ans,string s){
-  if(!root->left && root->right){
-    ans.push_back(s);
+void binaryTreePaths(vector<string> &result, TreeNode *root, string t)
+{
+  if (!root->left && !root->right)
+  {
+    result.push_back(t);
     return;
   }
-  if(root->left) helper(root->left,ans,s+"->"+to_string(root->left->val));
-  if(root->right) helper(root->right,ans,s+"->"+to_string(root->right->val));
+
+  if (root->left)
+    binaryTreePaths(result, root->left, t + "->" + to_string(root->left->val));
+  if (root->right)
+    binaryTreePaths(result, root->right, t + "->" + to_string(root->right->val));
+}
+
+vector<string> binaryTreePaths(TreeNode *root)
+{
+  vector<string> result;
+  if (!root)
+    return result;
+
+  binaryTreePaths(result, root, to_string(root->val));
+  return result;
 }

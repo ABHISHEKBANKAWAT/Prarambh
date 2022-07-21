@@ -1,20 +1,17 @@
 TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q)
 {
-  if (root == NULL)
-  {
-    return NULL;
-  }
-  TreeNode *leftAns = lowestCommonAncestor(root->left, p, q);
-  TreeNode *rightAns = lowestCommonAncestor(root->right, p, q);
-  if (root->val == p->val || root->val == q->val)
-    return root;
-  if (leftAns != NULL && rightAns != NULL)
+  if (root == NULL || root == p || root == q)
   {
     return root;
   }
-  if (leftAns != NULL)
-    return leftAns;
-  if (rightAns != NULL)
-    return rightAns;
-  return NULL;
+  TreeNode *left = lowestCommonAncestor(root->left, p, q);
+  TreeNode *right = lowestCommonAncestor(root->right, p, q);
+  if (left == NULL)
+    return right;
+  else if (right == NULL)
+    return left;
+  else
+  {
+    return root;
+  }
 }

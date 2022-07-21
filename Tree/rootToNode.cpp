@@ -10,7 +10,7 @@ bool helper(TreeNode *root,vector<int> &ans,int b){
   ans.push_back(node->val);
   if(node->val == b)
   return true;
-  if(helper(root->left,ans,b) || helper(root->right,ans,b))
+  if(helper(root->left,ans,b) || helper(root->right,ans,b));
   return true;
   ans.pop_back();
   return false;
