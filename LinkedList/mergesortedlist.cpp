@@ -1,7 +1,7 @@
-ListNode * mergetwoLL(Node * head1 , Node* head2)
+ListNode * mergetwoLL(ListNode * head1 , ListNode* head2)
 {
-  Node* finalhead = NULL;
-  Node * finaltail = NULL;
+  ListNode* finalhead = NULL;
+  ListNode * finaltail = NULL;
   while(head1!=NULL && head2!=NULL)
   {
     if(finalhead==NULL && finaltail==NULL)

@@ -1,3 +1,18 @@
+ListNode *reverse(ListNode *head)
+{
+  ListNode *current = head, *prev = NULL, *next = NULL;
+  while (curr != NULL)
+  {
+    next = curr->next;
+    current->next = prev;
+    prev = curr;
+    current = nextt;
+  }
+  head = prev;
+  return head;
+}
+
+
 ListNode * addtwo(ListNode * first,ListNode *second)
 {
   if(length(first)<length(second)){
