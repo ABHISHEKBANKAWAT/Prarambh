@@ -1,4 +1,10 @@
-//WAP to calculate power of "x" n times;
+  
+
+
+   -------------------------------
+   
+#include<bits/stdc++.h>
+using namespace std;
 
 double pow(double x , long n)
 {
@@ -12,4 +18,11 @@ double pow(double x , long n)
   double temp = pow(x,n/2);
   if(x%2==1) return temp*temp*x;
   return temp*temp;
+}
+int main(){
+  long n;
+  double x;
+  cin>>n>>x;
+  cout<<pow(n,x);
+  return 0;
 }
